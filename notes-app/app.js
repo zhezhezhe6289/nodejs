@@ -62,3 +62,5 @@ yargs.command({
 })
 
 yargs.parse()
+
+console.log('asd')
