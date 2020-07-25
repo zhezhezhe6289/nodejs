@@ -10,3 +10,6 @@ git push
 
 <!-- create another branch -->
 git checkout -b <new-branch-name>/<child-branch-name>
+git add .
+git commit -m "add something"
+git push --set-upstream origin t2/t2-child
