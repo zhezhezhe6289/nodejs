@@ -2,12 +2,17 @@ const request = require('postman-request')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/weatherstack')
 
-geocode('new taipei', (error, data) => {
+const address = process.argv[2]
+
+if (!address) {
+    console.log('please provide an address')
+} else {
+    geocode(address, (error, data) => {
     console.log('Error', error)
     console.log('Data', data)
-})
-
-forecast(25, 121.55, (error, data) => {
-    console.log('error:', error)
-    console.log('data:', data)
-})
+        forecast(data.latitude, data.longitute, (forecastError, forecastData) => {
+            console.log(forecastError)
+            console.log(forecastData)
+        })
+    })
+}
