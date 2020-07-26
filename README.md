@@ -8,5 +8,3 @@ $ git commit -m "添加add的說明"
 $ git merge <commit>
 $ git checkout master
 Switched to branch 'master'
-
-asdasdasdasdasd
