@@ -10,7 +10,7 @@ if (!address) {
     geocode(address, (error, data) => {
     console.log('Error', error)
     console.log('Data', data)
-        forecast(data.latitude, data.longitute, (forecastError, forecastData) => {
+        forecast(data.latitude, data.longitude, (forecastError, forecastData) => {
             console.log(forecastError)
             console.log(forecastData)
         })
