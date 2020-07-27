@@ -26,16 +26,32 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'Weather App',
+        title: 'About Me',
         name: 'Eugene'
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: 'Weather App',
+        title: 'Help Page',
         name: 'Eugene',
         helpText: 'This is a helpful text!'
+    })
+})
+
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'eugeneChua',
+        errorMessage: 'Help article not found'
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'eugeneChua',
+        errorMessage: 'Page Not Found'
     })
 })
 
