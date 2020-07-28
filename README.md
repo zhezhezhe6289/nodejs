@@ -9,3 +9,8 @@ $ git checkout master
 Switched to branch 'master'
 $ git merge <branch-name>
 $ git branch -d <branch-name>
+
+
+<!-- nodemon watching-->
+$ nodemon app.js
+$ nodemon app.js -e css,js
