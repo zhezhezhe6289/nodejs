@@ -45,11 +45,11 @@ app.get('/weather', (req, res) => {
     if (req.query.address) {
         geocode(req.query.address, (error, {latitude, longitude, location} = {}) => {
             if (error) {
-                return res.send(error)
+                return res.send({error})
             }
             forecast(latitude, longitude, (error, forecastData) => {
                 if (error) {
-                    return res.send(error)
+                    return res.send({error})
                 }
                 res.send({
                     forecast: forecastData,
@@ -58,7 +58,6 @@ app.get('/weather', (req, res) => {
                 })
             })
         })
-        console.log(req.query.address)
     } else {
         res.send({
             error: 'You must provide an address'
@@ -83,7 +82,7 @@ app.get('*', (req, res) => {
 })
 
 app.listen(3000, '127.0.0.1', () => {
-    console.log('伺服器已啟動 port 為 3000')
+    console.log('Server is up on port 3000')
 })
 
 

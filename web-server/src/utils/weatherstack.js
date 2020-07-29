@@ -13,7 +13,7 @@ const forecast = (latitude, longitude, callback) => {
             } else {
                 const weatherLog = 
                 data.current.weather_descriptions[0] + 
-                '. It is currently ' + 
+                '. It is currently' +
                 data.current.temperature + 
                 ' degrees' + 
                 ', but it feels like ' + 
